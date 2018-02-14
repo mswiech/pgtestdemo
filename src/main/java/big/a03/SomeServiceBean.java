@@ -14,7 +14,7 @@ public class SomeServiceBean {
     public Long getValue(final String key) throws Exception {
         Long result = null;
         try (final Connection connection = dataSource.getConnection();
-             final PreparedStatement ps = connection.prepareStatement("select value from p2p.spring_test_table where key = ?")) {
+             final PreparedStatement ps = connection.prepareStatement("select value from a03.spring_test_table where key = ?")) {
             ps.setString(1, key);
             final ResultSet rs = ps.executeQuery();
             if (rs.next()) {
